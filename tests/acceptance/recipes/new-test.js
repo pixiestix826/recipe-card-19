@@ -3,7 +3,7 @@ import moduleForAcceptance from 'recipe-card-19/tests/helpers/module-for-accepta
 
 moduleForAcceptance('Acceptance | recipes/new');
 
-test('User can visit a recipe page', function(assert) {
+test('User can visit a recipe page and see a recipe', function(assert) {
   visit('/');
 
   andThen(function() {
@@ -11,10 +11,12 @@ test('User can visit a recipe page', function(assert) {
   });
 });
 
-test('User can see the .recipe-items for a single .recipe', function(assert) {
+test('User can see the .recipe-name for a single .recipe', function(assert) {
   visit('/');
 
   andThen(function() {
-    assert.equal(currentURL(), '/');
+    var recipe = find('recipe-name');
+
+    assert.equal(recipe.name, 'Chicken Pot Pie');
   });
 });
