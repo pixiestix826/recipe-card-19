@@ -11,12 +11,17 @@ test('User can visit a recipe page and see a recipe', function(assert) {
   });
 });
 
-test('User can see the recipe-name for a single recipe', function(assert) {
+test('User can see the serving size of the recipe', function(assert) {
+  let number = 0;
   visit('/');
 
-  andThen(function() {
-    var recipe = find('#recipe-name');
+  fillIn('.num-servings--input', number);
 
-    assert.equal(recipe.name, 'Chicken Pot Pie');
+  // click('.adjust-recipe');
+
+  andThen(function() {
+
+    assert.equal(number = 8);
+
   });
 });
