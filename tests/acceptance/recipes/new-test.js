@@ -27,9 +27,9 @@ test('User can change the serving size of the recipe', function(assert) {
   click('.adjust-recipe');
 
   andThen(function() {
-    find(number);
+    find('.num-servings-input');
 
-    assert.equal(number = 8);
+    assert.expect(number === 8);
 
   });
 });
