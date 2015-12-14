@@ -11,15 +11,23 @@ test('User can visit a recipe page and see a recipe', function(assert) {
   });
 });
 
-test('User can see the serving size of the recipe', function(assert) {
-  let number = '.num-servings-input';
+test('User can see a list of recipe-items', function(assert) {
   visit('/');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/');
+  });
+});
+
+test('User can change the serving size of the recipe', function(assert) {
+  let number = '.num-servings-input';
 
   fillIn(number, 8);
 
   click('.adjust-recipe');
 
   andThen(function() {
+    find(number);
 
     assert.equal(number = 8);
 
