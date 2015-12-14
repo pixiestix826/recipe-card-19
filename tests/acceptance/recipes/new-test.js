@@ -14,8 +14,11 @@ test('User can visit a recipe page and see a recipe', function(assert) {
 test('User can see a list of recipe-items', function(assert) {
   visit('/');
 
+  fillIn('.recipe-items', '1 Pound Chicken');
+
   andThen(function() {
-    assert.equal(currentURL(), '/');
+    var recipeItem = findWithAssert('.recipe-items');
+    assert.equal(recipeItem.length, 7);
   });
 });
 
@@ -24,12 +27,13 @@ test('User can change the serving size of the recipe', function(assert) {
 
   fillIn(number, 8);
 
-  click('.adjust-recipe');
+  click('.adjust-recipe-submit');
 
   andThen(function() {
-    find('.num-servings-input');
+    var numServings = findWithAssert('.num-servings-input');
+    findWithAssert('.num-servings-input');
 
-    assert.expect(number === 8);
-
+    assert.equal(numServings.length, 1);
+    assert.equal(numServings.eq(0).val(), 8);
   });
 });
