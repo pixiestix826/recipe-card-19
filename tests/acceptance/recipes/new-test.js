@@ -12,7 +12,7 @@ test('User can visit a recipe page and see a recipe', function(assert) {
 });
 
 test('User can see the serving size of the recipe', function(assert) {
-  let number = '.num-servings--input';
+  let number = '.num-servings-input';
   visit('/');
 
   fillIn(number);
