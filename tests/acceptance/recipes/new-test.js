@@ -15,9 +15,9 @@ test('User can see the serving size of the recipe', function(assert) {
   let number = '.num-servings-input';
   visit('/');
 
-  fillIn(number);
+  fillIn(number, 8);
 
-  // click('.adjust-recipe');
+  click('.adjust-recipe');
 
   andThen(function() {
 
