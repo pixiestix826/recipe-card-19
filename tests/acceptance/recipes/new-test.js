@@ -29,15 +29,15 @@ test('User can see a basic recipe card with a list of ingredients', function(ass
   });
 });
 
-// test('User can change the serving size of the recipe', function(assert) {
-//   visit('/');
-//   var number = findWithAssert('.num-servings-input');
-//
-//   fillIn(number, 8);
-//
-//   click('.adjust-recipe-submit');
-//
-//   andThen(function() {
-//
-//   });
-// });
+test('User can change the serving size of the recipe', function(assert) {
+  visit('/');
+  fillIn('.num-servings-input', 8);
+
+  click('.adjust-recipe-submit');
+
+  andThen(function() {
+    var numServings = findWithAssert('.num-servings-input');
+
+    assert.equal(numServings.eq(0).val(), 8, 'Input starts with a value of 8');
+  });
+});
