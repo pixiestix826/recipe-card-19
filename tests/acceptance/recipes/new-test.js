@@ -20,14 +20,14 @@ test('User can see a basic recipe card with a list of ingredients', function(ass
   // fillIn('.ingredients', '1 Pound Chicken');
 
   andThen(function() {
+    var name = findWithAssert('.recipe-name');
+    var numServings = findWithAssert('.num-servings-input');
     var ingredients = findWithAssert('.recipe-ingredient');
 
-    // var numServings = findWithAssert('.num-servings-input');
-
+    assert.equal(name.length, 1, 'There should be a recipe name');
+    assert.equal(numServings.length, 1);
+    assert.equal(numServings.eq(0).val(), 8, 'Input starts with a value of 8');
     assert.equal(ingredients.length, 7, 'There should be 7 ingredients in the recipe');
-
-    // assert.equal(numServings.length, 1);
-    // assert.equal(numServings.eq(0).val(), 8, 'Input starts with a value of 8');
   });
 });
 
