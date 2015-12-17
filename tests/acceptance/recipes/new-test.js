@@ -31,7 +31,7 @@ test('User can see a basic recipe card with a list of ingredients', function(ass
 
 // test('User can change the serving size of the recipe', function(assert) {
 //   visit('/');
-//   let number = '.num-servings-input';
+//   var number = findWithAssert('.num-servings-input');
 //
 //   fillIn(number, 8);
 //
