@@ -3,16 +3,19 @@
   <div class="servings-calc">
     <p>Makes<input type="number" class="num-servings-input" value="8">Servings</p>
     <button type="button" name="button" class="adjust-recipe">Adjust Recipe</button>
-    <button type="radio" label="US"></button>
-    <button type="radio" label="Metric"></button>
+    <button type="radio" label="US">US</button>
+    <button type="radio" label="Metric">Metric</button>
     <a href="#">(Help)</a>
   </div>
 </nav>
 
-  <ul class="recipe-ingredient-list">
-    {{#each model as |ingredient|}}
-      <li>{{ingredient.amount}} {{ingredient.name}}</li>
-    {{/each}}
-  </ul>
-
+<ul class="recipe-ingredient-list">
+  <li class="recipe-ingredient"></li>
+  <li class="recipe-ingredient"></li>
+  <li class="recipe-ingredient"></li>
+  <li class="recipe-ingredient"></li>
+  <li class="recipe-ingredient"></li>
+  <li class="recipe-ingredient"></li>
+  <li class="recipe-ingredient"></li>
+</ul>
 {{outlet}}

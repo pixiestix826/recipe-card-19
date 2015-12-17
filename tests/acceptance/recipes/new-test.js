@@ -14,18 +14,20 @@ test('User can visit a recipe page and see a recipe', function(assert) {
   });
 });
 
-test('User can see a basic recipe with a list of ingredients', function(assert) {
+test('User can see a basic recipe card with a list of ingredients', function(assert) {
   visit('/');
 
-  fillIn('.ingredients', '1 Pound Chicken');
+  // fillIn('.ingredients', '1 Pound Chicken');
 
   andThen(function() {
-    var ingredients = findWithAssert('.ingredients');
-    var numServings = findWithAssert('.num-servings-input');
+    var ingredients = findWithAssert('.recipe-ingredient');
 
-    assert.equal(ingredients.length, 7);
-    assert.equal(numServings.length, 1);
-    assert.equal(numServings.eq(0).val(), 8, 'Input starts with a value of 8');
+    // var numServings = findWithAssert('.num-servings-input');
+
+    assert.equal(ingredients.length, 7, 'There should be 7 ingredients in the recipe');
+
+    // assert.equal(numServings.length, 1);
+    // assert.equal(numServings.eq(0).val(), 8, 'Input starts with a value of 8');
   });
 });
 
