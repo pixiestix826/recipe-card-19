@@ -1,7 +1,20 @@
-{{!-- <ul class="recipe-list">
-  {{#each model as |ingredients|}}
-    <li>{{ingredients.amount}} {{ingredients.name}}</li>
-  {{/each}}
-</ul> --}}
+<h2 class="recipe-name">Chicken Pot Pie</h2>
+<nav class="top-header">
+  <div class="servings-calc">
+    <p>Makes<input type="number" class="num-servings-input" value="8">Servings</p>
+    <button type="button" name="button" class="adjust-recipe">Adjust Recipe</button>
+    <button type="radio" label="US">US</button>
+    <button type="radio" label="Metric">Metric</button>
+    <a href="#">(Help)</a>
+  </div>
+</nav>
 
+<ul class="recipe-ingredient-list">
+  {{#each model as |ingredient|}}
+    <li class="recipe-ingredient">
+      <span class="recipe-ingredient__amount">1 lb</span>
+      <span class="recipe-ingredient__name">Chicken</span>
+     </li>
+   {{/each}}
+</ul>
 {{outlet}}
