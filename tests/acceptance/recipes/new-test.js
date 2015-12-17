@@ -17,8 +17,6 @@ test('User can visit a recipe page and see a recipe', function(assert) {
 test('User can see a basic recipe card with a list of ingredients', function(assert) {
   visit('/');
 
-  // fillIn('.ingredients', '1 Pound Chicken');
-
   andThen(function() {
     var name = findWithAssert('.recipe-name');
     var numServings = findWithAssert('.num-servings-input');
