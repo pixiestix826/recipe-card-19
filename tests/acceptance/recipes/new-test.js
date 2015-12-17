@@ -11,7 +11,7 @@ test('User can visit a recipe page and see a recipe', function(assert) {
   });
 });
 
-test('User can see a basic recipe list of recipe-items', function(assert) {
+test('User can see a basic recipe with a list of recipe-items', function(assert) {
   visit('/');
 
   fillIn('.recipe-items', '1 Pound Chicken');
