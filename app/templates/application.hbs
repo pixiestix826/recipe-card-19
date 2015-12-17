@@ -9,8 +9,8 @@
   </div>
 </nav>
 
-  <ul class="recipe-list">
-    {{#each model as |recipe-items|}}
+  <ul class="recipe-ingredient-list">
+    {{#each model as |ingredient|}}
       <li>{{ingredient.amount}} {{ingredient.name}}</li>
     {{/each}}
   </ul>

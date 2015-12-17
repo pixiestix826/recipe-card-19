@@ -8,19 +8,22 @@ test('User can visit a recipe page and see a recipe', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/');
+
+    // This may change over time
+    assert.equal(currentRouteName(), 'recipes.index');
   });
 });
 
-test('User can see a basic recipe with a list of recipe-items', function(assert) {
+test('User can see a basic recipe with a list of ingredients', function(assert) {
   visit('/');
 
-  fillIn('.recipe-items', '1 Pound Chicken');
+  fillIn('.ingredients', '1 Pound Chicken');
 
   andThen(function() {
-    var recipeItem = findWithAssert('.recipe-items');
+    var ingredients = findWithAssert('.ingredients');
     var numServings = findWithAssert('.num-servings-input');
 
-    assert.equal(recipeItem.length, 7);
+    assert.equal(ingredients.length, 7);
     assert.equal(numServings.length, 1);
     assert.equal(numServings.eq(0).val(), 8, 'Input starts with a value of 8');
   });
