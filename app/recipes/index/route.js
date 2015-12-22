@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.findAll('recipe');
+    return this.store.findAll('recipe');p
     return [
         {amount: '1 lb', name: 'Chicken'},
         {amount: '1 Cup', name: 'Sliced Carrots'},
