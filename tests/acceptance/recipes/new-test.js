@@ -15,6 +15,7 @@ test('User can visit a recipe page and see a recipe', function(assert) {
 });
 
 test('User can see a basic recipe card with a list of ingredients', function(assert) {
+  server.createList('recipe', 7);
   visit('/');
 
   andThen(function() {
