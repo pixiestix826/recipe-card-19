@@ -1,4 +1,4 @@
-<h2 class="recipe-name">Chicken Pot Pie</h2>
+<h2 class="recipe-name">{{model.name}}</h2>
 <nav class="top-header">
   <div class="servings-calc">
     <p>Makes<input type="number" class="num-servings-input" value="8">Servings</p>
@@ -10,9 +10,9 @@
 </nav>
 
 <ul class="recipe-ingredient-list">
-  {{#each model as |ingredient|}}
+  {{#each model.ingredients as |ingredient|}}
     <li class="recipe-ingredient">
-      <span class="recipe-ingredient__amount">{{ingredient.amount}}</span>
+      <span class="recipe-ingredient__amount">{{ingredient.quantity}} {{ingredient.unit}}</span>
       <span class="recipe-ingredient__name">{{ingredient.name}}</span>
      </li>
    {{/each}}

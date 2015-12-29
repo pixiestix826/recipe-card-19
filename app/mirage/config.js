@@ -1,6 +1,9 @@
+import Mirage from 'ember-cli-mirage';
+
 export default function() {
 
-  this.get('/recipes');
+  this.get('/recipes/:id');
+  this.get('/ingredients/:id');
 
   // These comments are here to help you get started. Feel free to delete them.
 
