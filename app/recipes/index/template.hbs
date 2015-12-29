@@ -1,0 +1,20 @@
+<h2 class="recipe-name">{{model.name}}</h2>
+<nav class="top-header">
+  <div class="servings-calc">
+    <p>Makes<input type="number" class="num-servings-input" value="8">Servings</p>
+    <button type="button" name="button" class="adjust-recipe-submit">Adjust Recipe</button>
+    <button type="radio" label="US">US</button>
+    <button type="radio" label="Metric">Metric</button>
+    <a href="#">(Help)</a>
+  </div>
+</nav>
+
+<ul class="recipe-ingredient-list">
+  {{#each model.ingredients as |ingredient|}}
+    <li class="recipe-ingredient">
+      <span class="recipe-ingredient__amount">{{ingredient.quantity}} {{ingredient.unit}}</span>
+      <span class="recipe-ingredient__name">{{ingredient.name}}</span>
+     </li>
+   {{/each}}
+</ul>
+{{outlet}}
