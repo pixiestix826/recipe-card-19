@@ -4,4 +4,8 @@ export default Ember.Route.extend({
   model() {
     return this.store.findRecord('recipe', 1);
   },
+
+  afterModel(model) {
+    model.set('currentServings', model.get('originalServings'));
+  },
 });
